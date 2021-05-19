@@ -3,6 +3,8 @@ package org.jeecg.modules.gis.service;
 import org.jeecg.modules.gis.entity.GisImage;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * @Description: 图片管理
  * @Author: jeecg-boot
@@ -11,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IGisImageService extends IService<GisImage> {
 
+    List<GisImage> queryImgList();
 }

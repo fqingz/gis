@@ -1,6 +1,7 @@
 package org.jeecg.modules.gis.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.jeecg.common.api.vo.Result;
@@ -56,6 +57,14 @@ public class GisImageController extends JeecgController<GisImage, IGisImageServi
 		IPage<GisImage> pageList = gisImageService.page(page, queryWrapper);
 		return Result.OK(pageList);
 	}
+
+	 @AutoLog(value = "图片管理-查询")
+	 @ApiOperation(value="图片管理-查询", notes="图片管理-查询")
+	 @GetMapping(value = "/queryImg")
+	 public Result<?> queryImg(HttpServletRequest req) {
+		 List<GisImage> list = gisImageService.queryImgList();
+		 return Result.OK(list);
+	 }
 	
 	/**
 	 *   添加

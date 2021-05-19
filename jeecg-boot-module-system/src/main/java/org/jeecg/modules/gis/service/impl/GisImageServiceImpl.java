@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
+import java.util.List;
+
 /**
  * @Description: 图片管理
  * @Author: jeecg-boot
@@ -16,4 +18,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 @Service
 public class GisImageServiceImpl extends ServiceImpl<GisImageMapper, GisImage> implements IGisImageService {
 
+    @Override
+    public List<GisImage> queryImgList() {
+        return this.baseMapper.queryImgList();
+    }
 }
